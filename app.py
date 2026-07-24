@@ -161,7 +161,7 @@ if __name__ == "__main__":
     retriever = crear_base_conocimiento(documentos)
     agente = inicializar_agente_educativo(retriever)
     
-    print("\n ¡Agente Educativo en línea! Pregúntame lo que quieras. Escribe 'salir' para terminar.\n")
+    print("\n Bienvenido al agente educativo! Pregúntame lo que quieras. Escribe 'salir' para terminar.\n")
     
     while True:
         pregunta = input("Estudiante: ")
