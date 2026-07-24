@@ -3,8 +3,8 @@
 # =====================================================================
 
 if __name__ == "__main__":
-    # Verificar OPENAI_API_KEY si existe en entorno antes de correr script
-    if "OPENAI_API_KEY" not in os.environ:
+    # Verificar GOOGLE_API_KEY si existe en entorno antes de correr script
+    if "GOOGLE_API_KEY" not in os.environ:
         print("Error: Configurar la variable de entorno 'OPENAI_API_KEY'")
         exit(1)
         
