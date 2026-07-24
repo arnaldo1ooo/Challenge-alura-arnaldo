@@ -93,7 +93,7 @@ def crear_base_conocimiento(documentos):
 # =====================================================================
 def inicializar_agente_educativo(retriever):
     # Instanciamos el modelo de lenguaje de manera óptima para el agente
-    llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.2)    
+    llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0.2)    
 
     # Definimos el prompt del sistema dándole el rol y restricciones
     system_prompt = (
