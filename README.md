@@ -6,7 +6,7 @@ Repositorio de Agente Educativo de IA, armado como parte del Challenge de Alura 
 
 ## Descripción General
 
-El agente se encarga de leer un montón de archivos `.csv` que hacen de base de conocimiento, aplicando búsqueda semántica para rescatar solo los fragmentos que posta sirven para responderle al alumno. A partir de ahí, arma una respuesta clara, y al pie, basándose únicamente en la información que tiene a mano.
+El agente se encarga de leer varios archivos `.csv` que hacen de base de conocimiento, aplicando búsqueda semántica para rescatar solo los fragmentos que posta sirven para responderle al alumno. A partir de ahí, arma una respuesta clara, y al pie, basándose únicamente en la información que tiene a mano.
 
 ### Características Principales:
 * **Lectura y unificación multifuente:** Carga automáticamente información desde distintos archivos CSV (FAQs, guías, políticas de reembolso, reglamentos y programas de becas).
@@ -42,8 +42,6 @@ Contexto Relevante (k=3)
 * **Modelo de Embeddings:** Hugging Face (`sentence-transformers/all-MiniLM-L6-v2`) — *Ejecución 100% Local*
 * **Base de Datos Vectorial:** FAISS (`faiss-cpu`)
 * **Procesamiento de Datos:** Pandas
-
-## Cómo ejecutar el proyecto
 
 ### Pre-requisitos
 * Tener instalado Python 3.10 o superior.
@@ -84,14 +82,14 @@ python3 app.py
 ```
 ## Ejemplos de Preguntas y Respuestas
 
-### Ejemplo 1: Consulta sobre Certificados y Cursos
+- Ejemplo 1: Consulta sobre certificado
 * **Estudiante:** ¿Qué requisitos necesito para obtener mi certificado de aprobación?
 * **Agente:** Para obtener tu certificado debes finalizar el 100% de las lecciones del curso y obtener una calificación mínima de 80/100 en el proyecto final o evaluación integradora.
 
-### Ejemplo 2: Consulta fuera de la documentación (Manejo de casos no cubiertos)
+- Ejemplo 2: Consulta fuera de la documentación (Manejo de casos no cubiertos)
 * **Estudiante:** ¿Tienen clases presenciales en Paraguay?
 * **Agente:** Hola. No poseo información sobre clases presenciales dentro de la documentación disponible, ya que nuestra oferta es 100% en línea. Te sugiero contactar directamente al equipo de soporte para obtener más detalles.
-### Ejemplo 3: Consulta sobre Políticas de Reembolso
+- Ejemplo 3: Consulta sobre reembolso
 * **Estudiante:** ¿Cuál es el plazo máximo para pedir un reembolso?
 * **Agente:** De acuerdo con la política de reembolso de la plataforma, el plazo máximo para solicitar un reembolso completo es dentro de los primeros 7 días naturales posteriores a la fecha de compra del curso.
 
