@@ -2,7 +2,7 @@
 # 3. FUNCIÓN AGREGADA: INICIALIZAR EL AGENTE EDUCATIVO
 # =====================================================================
 def inicializar_agente_educativo(retriever):
-    llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.2)
+    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.2)
     
     # Se define el prompt dándole el rol y restricciones
     system_prompt = (

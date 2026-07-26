@@ -1,3 +1,4 @@
+.env
 .cache/
 .bash_history
 *.db

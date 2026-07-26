@@ -11,7 +11,7 @@ from langchain_community.vectorstores import FAISS
 # Cambiamos la importación a la librería de Google Gemini
 from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
-
+from my_keys import GEMINI_API_KEY
 
 # =====================================================================
 # 1. PROCESAMIENTO DE ARCHIVOS CSV
@@ -93,7 +93,10 @@ def crear_base_conocimiento(documentos):
 # =====================================================================
 def inicializar_agente_educativo(retriever):
     # Instanciamos el modelo de lenguaje de manera óptima para el agente
-    llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0.2)    
+    llm = ChatGoogleGenerativeAI(
+        api_key=GEMINI_API_KEY,
+        model="gemini-1.5-flash"
+    )  
 
     # Definimos el prompt del sistema dándole el rol y restricciones
     system_prompt = (
@@ -147,9 +150,14 @@ def inicializar_agente_educativo(retriever):
 # =====================================================================
 if __name__ == "__main__":
     # Validamos la API Key de Google
-    if "GOOGLE_API_KEY" not in os.environ:
-        print("Error: Debes configurar la variable de entorno 'GOOGLE_API_KEY'")
+    if "GEMINI_API_KEY" not in os.environ and "GOOGLE_API_KEY" not in os.environ:
+        print("Error: Debes configurar la variable de entorno 'GEMINI_API_KEY'")
         exit(1)
+        
+    if "GEMINI_API_KEY" in os.environ and "GOOGLE_API_KEY" not in os.environ:
+        os.environ["GOOGLE_API_KEY"] = os.environ["GEMINI_API_KEY"]
+    elif "GOOGLE_API_KEY" in os.environ and "GEMINI_API_KEY" not in os.environ:
+        os.environ["GEMINI_API_KEY"] = os.environ["GOOGLE_API_KEY"]
         
     print("Iniciando configuración del agente educativo...")
     documentos = cargar_y_procesar_csvs()

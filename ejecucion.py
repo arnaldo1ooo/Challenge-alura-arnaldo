@@ -3,9 +3,9 @@
 # =====================================================================
 
 if __name__ == "__main__":
-    # Verificar GOOGLE_API_KEY si existe en entorno antes de correr script
-    if "GOOGLE_API_KEY" not in os.environ:
-        print("Error: Configurar la variable de entorno 'OPENAI_API_KEY'")
+    # Verificar GEMINI_API_KEY si existe en entorno antes de correr script
+    if "GEMINI_API_KEY" not in os.environ:
+        print("Error: Configurar la variable de entorno 'GEMINI_API_KEY'")
         exit(1)
         
     print("Se inicia la configuración del agente educativo...")
